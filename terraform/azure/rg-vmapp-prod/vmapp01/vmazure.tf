@@ -1,4 +1,4 @@
-resource "azurerm_network_interface" "guiazure" {
+resource "azurerm_network_interface" "vmazure" {
   name                = "${var.app_name}-nic"
   location            = data.terraform_remote_state.core.outputs.azurerm_resource_group_location
   resource_group_name = data.terraform_remote_state.core.outputs.azurerm_resource_group_name
@@ -10,7 +10,7 @@ resource "azurerm_network_interface" "guiazure" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "guiazure" {
+resource "azurerm_linux_virtual_machine" "vmazure" {
   name                = var.app_name
   resource_group_name = data.terraform_remote_state.core.outputs.azurerm_resource_group_name
   location            = data.terraform_remote_state.core.outputs.azurerm_resource_group_location
